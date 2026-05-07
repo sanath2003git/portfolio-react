@@ -76,9 +76,26 @@ h3 {
   width: 250px;
   border-radius: 10px;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-card p {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #c9d1d9;
+}
+
+.project-card {
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+button:hover {
+  background-color: #1f6feb;
 }
