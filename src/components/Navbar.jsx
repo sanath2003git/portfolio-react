@@ -1,11 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+
+  const handleScroll = () => {
+
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+}, []);
 
   return (
-    <nav>
+    <nav className={scrolled ? 'navbar scrolled' : 'navbar'}>
 
       <h1>SANATH</h1>
 
