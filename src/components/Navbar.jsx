@@ -5,6 +5,12 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Close Mobile Menu
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  // Navbar Scroll Effect
   useEffect(() => {
 
     const handleScroll = () => {
@@ -35,23 +41,23 @@ function Navbar() {
       {/* Desktop Menu */}
       <ul className="desktop-menu">
 
-  <li>
-    <a href="#home">Home</a>
-  </li>
+        <li>
+          <a href="#home">Home</a>
+        </li>
 
-  <li>
-    <a href="#about">About</a>
-  </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
 
-  <li>
-    <a href="#skills">Skills</a>
-  </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
 
-  <li>
-    <a href="#projects">Projects</a>
-  </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
 
-</ul>
+      </ul>
 
       {/* Right Side */}
       <div className="nav-right">
@@ -66,25 +72,35 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
+
         <ul className="mobile-menu">
 
-  <li>
-    <a href="#home">Home</a>
-  </li>
+          <li>
+            <a href="#home" onClick={closeMenu}>
+              Home
+            </a>
+          </li>
 
-  <li>
-    <a href="#about">About</a>
-  </li>
+          <li>
+            <a href="#about" onClick={closeMenu}>
+              About
+            </a>
+          </li>
 
-  <li>
-    <a href="#skills">Skills</a>
-  </li>
+          <li>
+            <a href="#skills" onClick={closeMenu}>
+              Skills
+            </a>
+          </li>
 
-  <li>
-    <a href="#projects">Projects</a>
-  </li>
+          <li>
+            <a href="#projects" onClick={closeMenu}>
+              Projects
+            </a>
+          </li>
 
-</ul>
+        </ul>
+
       )}
 
     </nav>
