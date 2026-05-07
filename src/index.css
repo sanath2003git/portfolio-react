@@ -62,3 +62,23 @@ h3 {
   padding: 15px 20px;
   border-radius: 8px;
 }
+
+.projects-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: #161b22;
+  padding: 25px;
+  width: 250px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.project-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
