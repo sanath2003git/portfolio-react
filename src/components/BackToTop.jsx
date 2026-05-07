@@ -18,6 +18,11 @@ function BackToTop() {
 
     window.addEventListener('scroll', handleScroll);
 
+    // Cleanup Function
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
   }, []);
 
   const scrollToTop = () => {

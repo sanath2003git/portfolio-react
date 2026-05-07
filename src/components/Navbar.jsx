@@ -7,21 +7,27 @@ function Navbar() {
 
   useEffect(() => {
 
-  const handleScroll = () => {
+    const handleScroll = () => {
 
-    if (window.scrollY > 50) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
 
-  };
+    };
 
-  window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-}, []);
+    // Cleanup Function
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+  }, []);
 
   return (
+
     <nav className={scrolled ? 'navbar scrolled' : 'navbar'}>
 
       <h1>SANATH</h1>
@@ -37,7 +43,6 @@ function Navbar() {
       {/* Right Side */}
       <div className="nav-right">
 
-        {/* Toggle Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -57,6 +62,7 @@ function Navbar() {
       )}
 
     </nav>
+
   );
 }
 
