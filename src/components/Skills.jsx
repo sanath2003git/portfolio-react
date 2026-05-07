@@ -12,7 +12,7 @@ function Skills() {
     <section>
       <h2>My Skills</h2>
 
-      <div>
+      <div className="skills-container">
         {skills.map((skill) => (
   <h3 key={skill}>{skill}</h3>
         ))}
