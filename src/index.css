@@ -357,3 +357,79 @@ button:hover {
   }
 
 }
+
+.hero-buttons {
+  display: flex;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+}
+
+.contact-links {
+  display: flex;
+
+  gap: 25px;
+
+  font-size: 35px;
+}
+
+.contact-links a {
+  color: white;
+
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  color: #0d6efd;
+
+  transform: translateY(-5px);
+}
+
+footer {
+  padding: 30px;
+
+  text-align: center;
+
+  background-color: #161b22;
+}
+
+/* Tech Stack */
+
+.tech-stack {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  justify-content: center;
+
+  margin-top: 15px;
+}
+
+.tech-badge {
+  background-color: #0d1117;
+
+  color: #58a6ff;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  transition: 0.3s;
+}
+
+.tech-badge:hover {
+  transform: translateY(-3px);
+
+  background-color: #1c2128;
+}

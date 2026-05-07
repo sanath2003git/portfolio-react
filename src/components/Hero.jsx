@@ -1,20 +1,39 @@
 import Button from './Button';
 
 function Hero() {
+
   return (
-    <section id="home" className="reveal">
+
+    <section
+      id="home"
+      className="reveal"
+    >
+
       <h1>C S Sanath Sreekumar</h1>
 
       <p>
-        Web Developer | MCA Student
+        React Developer | Python Developer | MCA Student
       </p>
 
-      <Button text="View Projects" />
+      <div className="hero-buttons">
 
-      <Button text="Download Resume" />
+        <a href="#projects">
+          <Button text="View Projects" />
+        </a>
+
+        <a
+          href="/resume.pdf"
+          download
+        >
+          <Button text="Download Resume" />
+        </a>
+
+      </div>
 
     </section>
+
   );
+
 }
 
 export default Hero;

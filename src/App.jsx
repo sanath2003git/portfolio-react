@@ -6,6 +6,8 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import BackToTop from './components/BackToTop';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -44,6 +46,8 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Contact />
+      <Footer />
       <BackToTop />
     </>
   );
