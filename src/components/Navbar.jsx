@@ -34,11 +34,24 @@ function Navbar() {
 
       {/* Desktop Menu */}
       <ul className="desktop-menu">
-        <li>Home</li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Contact</li>
-      </ul>
+
+  <li>
+    <a href="#home">Home</a>
+  </li>
+
+  <li>
+    <a href="#about">About</a>
+  </li>
+
+  <li>
+    <a href="#skills">Skills</a>
+  </li>
+
+  <li>
+    <a href="#projects">Projects</a>
+  </li>
+
+</ul>
 
       {/* Right Side */}
       <div className="nav-right">
@@ -54,11 +67,24 @@ function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <ul className="mobile-menu">
-          <li>Home</li>
-          <li>About</li>
-          <li>Projects</li>
-          <li>Contact</li>
-        </ul>
+
+  <li>
+    <a href="#home">Home</a>
+  </li>
+
+  <li>
+    <a href="#about">About</a>
+  </li>
+
+  <li>
+    <a href="#skills">Skills</a>
+  </li>
+
+  <li>
+    <a href="#projects">Projects</a>
+  </li>
+
+</ul>
       )}
 
     </nav>

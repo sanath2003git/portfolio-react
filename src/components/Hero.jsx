@@ -2,7 +2,7 @@ import Button from './Button';
 
 function Hero() {
   return (
-    <section className="reveal">
+    <section id="home" className="reveal">
       <h1>C S Sanath Sreekumar</h1>
 
       <p>

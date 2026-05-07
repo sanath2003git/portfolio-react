@@ -9,7 +9,7 @@ const skills = [
 
 function Skills() {
   return (
-    <section className="reveal">
+    <section id="skills" className="reveal">
       <h2>My Skills</h2>
 
       <div className="skills-container">
