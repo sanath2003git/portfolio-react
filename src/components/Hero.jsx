@@ -1,3 +1,5 @@
+import Button from './Button';
+
 function Hero() {
   return (
     <section>
@@ -7,9 +9,10 @@ function Hero() {
         Web Developer | MCA Student
       </p>
 
-      <button>
-        View Projects
-      </button>
+      <Button text="View Projects" />
+
+      <Button text="Download Resume" />
+
     </section>
   );
 }
