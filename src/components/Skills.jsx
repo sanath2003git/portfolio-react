@@ -4,21 +4,42 @@ const skills = [
   "JavaScript",
   "React",
   "Python",
-  "PHP"
+  "Django",
+  "Flask",
+  "PHP",
+  "Git",
+  "GitHub"
 ];
 
 function Skills() {
+
   return (
-    <section id="skills" className="reveal">
-      <h2>My Skills</h2>
+
+    <section
+      id="skills"
+      className="reveal"
+    >
+
+      <h2 className="section-title">
+        My Skills
+      </h2>
 
       <div className="skills-container">
+
         {skills.map((skill) => (
-  <h3 key={skill}>{skill}</h3>
+
+          <h3 key={skill}>
+            {skill}
+          </h3>
+
         ))}
+
       </div>
+
     </section>
+
   );
+
 }
 
 export default Skills;

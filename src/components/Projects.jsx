@@ -8,7 +8,9 @@ const projects = [
     description:
       "A Django-based event management platform with event booking, authentication, and organizer dashboards.",
 
-    tech: ["Django", "Python", "SQLite", "Bootstrap"]
+    tech: ["Django", "Python", "SQLite", "Bootstrap"],
+
+    github: "https://github.com/sanath2003git/event-management-system-2"
   },
 
   {
@@ -17,7 +19,9 @@ const projects = [
     description:
       "A responsive website for exploring anime movie details and information.",
 
-    tech: ["React"]
+    tech: ["React"],
+
+    github: "https://github.com/sanath2003git/movie_"
   },
 
   {
@@ -26,7 +30,9 @@ const projects = [
     description:
       "A PHP/MySQL portal for managing hostel leave requests and approvals.",
 
-    tech: ["PHP", "MySQL"]
+    tech: ["PHP", "MySQL"],
+
+    github: "https://github.com/sanath2003git/hostel-leave-management-system"
   },
 
   {
@@ -35,7 +41,9 @@ const projects = [
     description:
       "A Python Flask-based expense tracking application.",
 
-    tech: ["Python", "Flask"]
+    tech: ["Python", "Flask"],
+
+    github: "https://github.com/sanath2003git/Expense-tracker"
   }
 
 ];
@@ -46,7 +54,7 @@ function Projects() {
 
     <section id="projects" className="reveal">
 
-      <h2>Projects</h2>
+      <h2 className="section-title">Projects</h2>
 
       <div className="projects-container">
 
@@ -57,6 +65,7 @@ function Projects() {
             title={project.title}
             description={project.description}
             tech={project.tech}
+            github={project.github}
           />
 
         ))}

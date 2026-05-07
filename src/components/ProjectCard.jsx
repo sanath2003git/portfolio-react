@@ -1,4 +1,9 @@
-function ProjectCard({ title, description, tech }) {
+function ProjectCard({
+  title,
+  description,
+  tech,
+  github
+}) {
 
   return (
 
@@ -24,9 +29,19 @@ function ProjectCard({ title, description, tech }) {
 
       </div>
 
-      <button>
-        View Project
-      </button>
+      {/* GitHub Button */}
+      <div className="project-buttons">
+
+        <a
+          href={github}
+          target="_blank"
+        >
+          <button>
+            GitHub
+          </button>
+        </a>
+
+      </div>
 
     </div>
 
