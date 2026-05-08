@@ -10,7 +10,8 @@ const projects = [
 
     tech: ["Django", "Python", "SQLite", "Bootstrap"],
 
-    github: "https://github.com/sanath2003git/event-management-system-2"
+    github:
+      "https://github.com/sanath2003git/event-management-system-2"
   },
 
   {
@@ -21,7 +22,8 @@ const projects = [
 
     tech: ["React"],
 
-    github: "https://github.com/sanath2003git/movie_"
+    github:
+      "https://github.com/sanath2003git/movie_"
   },
 
   {
@@ -32,7 +34,8 @@ const projects = [
 
     tech: ["PHP", "MySQL"],
 
-    github: "https://github.com/sanath2003git/hostel-leave-management-system"
+    github:
+      "https://github.com/sanath2003git/hostel-leave-management-system"
   },
 
   {
@@ -43,7 +46,8 @@ const projects = [
 
     tech: ["Python", "Flask"],
 
-    github: "https://github.com/sanath2003git/Expense-tracker"
+    github:
+      "https://github.com/sanath2003git/Expense-tracker"
   }
 
 ];
@@ -52,23 +56,37 @@ function Projects() {
 
   return (
 
-    <section id="projects" className="reveal">
+    <section
+      id="projects"
+      className="projects-section reveal">
 
-      <h2 className="section-title">Projects</h2>
+      <div className="projects-wrapper">
 
-      <div className="projects-container">
+        <div className="projects-heading">
 
-        {projects.map((project) => (
+  <h2 className="projects-title">
+    Projects
+  </h2>
 
-          <ProjectCard
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            tech={project.tech}
-            github={project.github}
-          />
+  <div className="section-line1"></div>
 
-        ))}
+</div>
+
+        <div className="projects-container">
+
+          {projects.map((project) => (
+
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              tech={project.tech}
+              github={project.github}
+            />
+
+          ))}
+
+        </div>
 
       </div>
 

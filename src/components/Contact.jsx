@@ -1,4 +1,8 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope
+} from "react-icons/fa";
 
 function Contact() {
 
@@ -6,31 +10,40 @@ function Contact() {
 
     <section
       id="contact"
-      className="reveal"
+      className="contact-section"
     >
 
-      <h2 className="section-title">
-        Contact Me
-      </h2>
+      <div className="contact-wrapper">
 
-      <p>
-        Interested in working together or have a project idea?
-        Feel free to contact me.
-      </p>
+        <h2 className="contact-heading">
+          Let's Connect
+        </h2>
 
-      <div className="hero-buttons">
+        <div className="contact-icons">
 
-        <a href="mailto:Sanathsreekumar@gmail.com">
-          <FaEnvelope />
-        </a>
+          <a
+            href="mailto:Sanathsreekumar@gmail.com"
+          >
+            <FaEnvelope />
+          </a>
 
-        <a href="https://github.com/sanath2003git" target="_blank">
-          <FaGithub />
-        </a>
+          <a
+            href="https://github.com/sanath2003git"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub />
+          </a>
 
-        <a href="https://www.linkedin.com/in/c-s-sanath-sreekumar-b930b2258/" target="_blank">
-          <FaLinkedin />
-        </a>
+          <a
+            href="https://www.linkedin.com/in/c-s-sanath-sreekumar-b930b2258/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedin />
+          </a>
+
+        </div>
 
       </div>
 

@@ -1,45 +1,102 @@
-const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Python",
-  "Django",
-  "Flask",
-  "PHP",
-  "Git",
-  "GitHub"
-];
+import "../index.css";
 
 function Skills() {
-
   return (
-
-    <section
-      id="skills"
-      className="reveal"
-    >
-
-      <h2 className="section-title">
-        My Skills
-      </h2>
-
+    <section className="skills-section" id="skills">
       <div className="skills-container">
 
-        {skills.map((skill) => (
+        <h2 className="skills-title">Technical Skills</h2>
 
-          <h3 key={skill}>
-            {skill}
-          </h3>
+        <div className="skills-grid">
 
-        ))}
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>HTML, CSS & JavaScript</span>
+      <span>90%</span>
+    </div>
 
+    <div className="skill-bar">
+      <div
+        className="skill-progress blue"
+        style={{ width: "90%" }}
+      ></div>
+    </div>
+  </div>
+
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>React.js</span>
+      <span>75%</span>
+    </div>
+
+    <div className="skill-bar">
+      <div
+        className="skill-progress cyan"
+        style={{ width: "75%" }}
+      ></div>
+    </div>
+  </div>
+
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>Python & Flask</span>
+      <span>80%</span>
+    </div>
+
+    <div className="skill-bar">
+      <div
+        className="skill-progress blue"
+        style={{ width: "80%" }}
+      ></div>
+    </div>
+  </div>
+
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>Django</span>
+      <span>70%</span>
+    </div>
+
+    <div className="skill-bar">
+      <div
+        className="skill-progress cyan"
+        style={{ width: "70%" }}
+      ></div>
+    </div>
+  </div>
+
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>PHP & MySQL</span>
+      <span>75%</span>
+    </div>
+
+    <div className="skill-bar">
+      <div
+        className="skill-progress blue"
+        style={{ width: "75%" }}
+      ></div>
+    </div>
+  </div>
+
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>Git & GitHub</span>
+      <span>85%</span>
+    </div>
+
+    <div className="skill-bar">
+      <div
+        className="skill-progress cyan"
+        style={{ width: "85%" }}
+      ></div>
+    </div>
+  </div>
+
+</div>
       </div>
-
     </section>
-
   );
-
 }
 
 export default Skills;

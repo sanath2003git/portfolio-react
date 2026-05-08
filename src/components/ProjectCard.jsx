@@ -1,3 +1,4 @@
+import { FaGithub } from "react-icons/fa";
 function ProjectCard({
   title,
   description,
@@ -9,14 +10,16 @@ function ProjectCard({
 
     <div className="project-card">
 
+      {/* TITLE */}
       <h3>{title}</h3>
 
+      {/* DESCRIPTION */}
       <p>{description}</p>
 
-      {/* Tech Stack */}
+      {/* TECH STACK */}
       <div className="tech-stack">
 
-        {tech.map((item) => (
+        {tech?.map((item) => (
 
           <span
             key={item}
@@ -29,19 +32,15 @@ function ProjectCard({
 
       </div>
 
-      {/* GitHub Button */}
-      <div className="project-buttons">
-
-        <a
-          href={github}
-          target="_blank"
-        >
-          <button>
-            GitHub
-          </button>
-        </a>
-
-      </div>
+      {/* BUTTON */}
+      <a
+        href={github}
+        target="_blank"
+        rel="noreferrer"
+        className="project-link"
+      >
+        View Code <FaGithub />
+      </a>
 
     </div>
 

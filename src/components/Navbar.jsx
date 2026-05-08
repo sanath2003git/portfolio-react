@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function Navbar() {
 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] =
+    useState(false);
+
+  const [scrolled, setScrolled] =
+    useState(false);
 
   // Close Mobile Menu
   const closeMenu = () => {
@@ -15,87 +18,141 @@ function Navbar() {
 
     const handleScroll = () => {
 
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
 
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
 
-    // Cleanup Function
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+
     };
 
   }, []);
 
   return (
 
-    <nav className={scrolled ? 'navbar scrolled' : 'navbar'}>
+    <nav
+      className={
+        scrolled
+          ? "navbar scrolled"
+          : "navbar"
+      }
+    >
 
-      <h1>SANATH</h1>
+      {/* LOGO */}
+      <h1 className="logo">
+        SANATH
+      </h1>
 
-      {/* Desktop Menu */}
+      {/* DESKTOP MENU */}
       <ul className="desktop-menu">
 
         <li>
-          <a href="#home">Home</a>
+          <a href="#home">
+            Home
+          </a>
         </li>
 
         <li>
-          <a href="#about">About</a>
+          <a href="#about">
+            About
+          </a>
         </li>
 
         <li>
-          <a href="#skills">Skills</a>
+          <a href="#skills">
+            Skills
+          </a>
         </li>
 
         <li>
-          <a href="#projects">Projects</a>
+          <a href="#projects">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            Socials
+          </a>
         </li>
 
       </ul>
 
-      {/* Right Side */}
+      {/* MOBILE BUTTON */}
       <div className="nav-right">
 
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
+          className="menu-btn"
+          onClick={() =>
+            setMenuOpen(!menuOpen)
+          }
         >
-          {menuOpen ? 'Close' : 'Menu'}
+
+          {menuOpen
+            ? "✕"
+            : "☰"}
+
         </button>
 
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       {menuOpen && (
 
         <ul className="mobile-menu">
 
           <li>
-            <a href="#home" onClick={closeMenu}>
+            <a
+              href="#home"
+              onClick={closeMenu}
+            >
               Home
             </a>
           </li>
 
           <li>
-            <a href="#about" onClick={closeMenu}>
+            <a
+              href="#about"
+              onClick={closeMenu}
+            >
               About
             </a>
           </li>
 
           <li>
-            <a href="#skills" onClick={closeMenu}>
+            <a
+              href="#skills"
+              onClick={closeMenu}
+            >
               Skills
             </a>
           </li>
 
           <li>
-            <a href="#projects" onClick={closeMenu}>
+            <a
+              href="#projects"
+              onClick={closeMenu}
+            >
               Projects
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              onClick={closeMenu}
+            >
+              Socials
             </a>
           </li>
 
@@ -106,6 +163,7 @@ function Navbar() {
     </nav>
 
   );
+
 }
 
 export default Navbar;
