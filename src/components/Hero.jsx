@@ -1,43 +1,29 @@
 function Hero() {
-
   return (
+    <section id="home">
+      <div className="hero-content">
 
-    <section
-      id="home"
-      className="reveal"
-    >
+        <h1>
+          C S Sanath Sreekumar
+        </h1>
 
-      <h1 className="hero-title">
-        C S Sanath Sreekumar
-      </h1>
+        <p>
+          React Developer | Python Developer | MCA Student
+        </p>
 
-      <p className="hero-subtitle">
-        React Developer | Python Developer | MCA Student
-      </p>
-
-      <div className="hero-buttons">
-
-        <a href="#projects">
-          <button>
+        <div className="hero-buttons">
+          <a href="#projects" className="btn-primary">
             View Projects
-          </button>
-        </a>
+          </a>
 
-        <a
-          href="/resume.pdf"
-          download
-        >
-          <button>
+          <a href="/resume.pdf" className="btn-secondary">
             Download Resume
-          </button>
-        </a>
+          </a>
+        </div>
 
       </div>
-
     </section>
-
   );
-
 }
 
 export default Hero;
