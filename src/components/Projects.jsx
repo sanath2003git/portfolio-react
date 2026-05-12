@@ -3,48 +3,73 @@ import ProjectCard from './ProjectCard';
 const projects = [
 
   {
-    title: "Event Management System",
+  title: "Event Management System",
 
-    description:
-      "A Django-based event management platform with event booking, authentication, and organizer dashboards.",
+  description:
+    "A Django-based event management platform featuring event creation, booking management, user authentication, role-based dashboards, seat management, and organizer controls.",
 
-    tech: ["Django", "Python", "SQLite", "Bootstrap"],
+  tech: [
+    "Django",
+    "Python",
+    "SQLite",
+    "Bootstrap",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
 
     github:
       "https://github.com/sanath2003git/event-management-system-2"
   },
 
   {
-    title: "Anime Movie Website",
+  title: "Anime Movie App",
 
-    description:
-      "A responsive website for exploring anime movie details and information.",
+  description:
+    "A React-based anime movie application with movie search, favorites system, dynamic movie details pages, responsive UI, and localStorage support.",
 
-    tech: ["React"],
+  tech: ["React", "JavaScript", "CSS", "React Router", "Vite"],
 
     github:
       "https://github.com/sanath2003git/movie_"
   },
 
   {
-    title: "Hostel Leave Management",
+  title: "Hostel Leave Management System",
 
-    description:
-      "A PHP/MySQL portal for managing hostel leave requests and approvals.",
+  description:
+    "A PHP-based hostel management platform featuring online leave requests, leave approval workflow, attendance tracking, unauthorized absence detection, student outing monitoring, automated email notifications, and role-based dashboards for students and wardens.",
 
-    tech: ["PHP", "MySQL"],
+  tech: [
+    "PHP",
+    "MySQL",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "PHPMailer",
+    "Bootstrap"
+  ],
 
     github:
       "https://github.com/sanath2003git/hostel-leave-management-system"
   },
 
   {
-    title: "Expense Tracker",
+  title: "Expense Tracker System",
 
-    description:
-      "A Python Flask-based expense tracking application.",
+  description:
+    "A Flask-based expense tracking platform featuring user authentication, friend-based expense splitting, balance tracking, multi-user expense management, responsive dashboards, expense history, category-based expense organization, and secure CRUD operations.",
 
-    tech: ["Python", "Flask"],
+  tech: [
+    "Python",
+    "Flask",
+    "SQLAlchemy",
+    "SQLite",
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "JavaScript"
+  ],
 
     github:
       "https://github.com/sanath2003git/Expense-tracker"
