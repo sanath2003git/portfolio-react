@@ -12,13 +12,13 @@ function Skills() {
   <div className="skill-box">
     <div className="skill-info">
       <span>HTML, CSS & JavaScript</span>
-      <span>90%</span>
+      <span>85%</span>
     </div>
 
     <div className="skill-bar">
       <div
         className="skill-progress blue"
-        style={{ width: "90%" }}
+        style={{ width: "85%" }}
       ></div>
     </div>
   </div>
