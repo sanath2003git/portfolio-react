@@ -73,7 +73,24 @@ const projects = [
 
     github:
       "https://github.com/sanath2003git/Expense-tracker"
-  }
+  },{
+  title: "React Portfolio Website",
+
+  description:
+    "A modern responsive portfolio website built with React and Vite featuring smooth scrolling, reusable components, responsive design, animated sections, and project showcase cards.",
+
+  tech: [
+    "React",
+    "Vite",
+    "JavaScript",
+    "CSS",
+    "HTML",
+    "React Icons"
+  ],
+
+  github:
+    "https://github.com/sanath2003git/portfolio-react"
+}
 
 ];
 
