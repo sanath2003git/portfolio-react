@@ -41,15 +41,11 @@ function Navbar() {
   return (
 
     <nav
-      className={
-        scrolled
-          ? "navbar scrolled"
-          : "navbar"
-      }
-    >
+  className={`navbar ${scrolled ? "scrolled" : ""} container-fluid`}
+>
 
       {/* LOGO */}
-      <h1 className="logo">
+      <h1 className="logo ">
         SANATH
       </h1>
 
