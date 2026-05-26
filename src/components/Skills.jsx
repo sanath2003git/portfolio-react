@@ -1,97 +1,100 @@
 import "../index.css";
 
-import calculateSkills
-from "../utils/calculateSkills";
-
 function Skills() {
-
-  const skills =
-    calculateSkills();
-
   return (
-
-    <section
-      className="skills-section"
-      id="skills"
-    >
-
+    <section className="skills-section" id="skills">
       <div className="skills-container">
 
-        <h2 className="skills-title">
-          Technical Skills
-        </h2>
+        <h2 className="skills-title">Technical Skills</h2>
 
         <div className="skills-grid">
 
-          {
-            skills.map((skill, index) => (
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>HTML, CSS & JavaScript</span>
+      <span>85%</span>
+    </div>
 
-              <div
-                className="skill-box"
-                key={index}
-              >
+    <div className="skill-bar">
+      <div
+        className="skill-progress blue"
+        style={{ width: "85%" }}
+      ></div>
+    </div>
+  </div>
 
-                {/* TOP */}
-                <div className="skill-info">
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>React.js</span>
+      <span>75%</span>
+    </div>
 
-                  <span>
-                    {skill.name}
-                  </span>
+    <div className="skill-bar">
+      <div
+        className="skill-progress cyan"
+        style={{ width: "75%" }}
+      ></div>
+    </div>
+  </div>
 
-                  <span>
-                    {skill.percentage}%
-                  </span>
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>Python & Flask</span>
+      <span>80%</span>
+    </div>
 
-                </div>
+    <div className="skill-bar">
+      <div
+        className="skill-progress blue"
+        style={{ width: "80%" }}
+      ></div>
+    </div>
+  </div>
 
-                {/* BAR */}
-                <div className="skill-bar">
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>Django</span>
+      <span>70%</span>
+    </div>
 
-                  <div
-                    className={`skill-progress ${
-                      index % 2 === 0
-                        ? "blue"
-                        : "cyan"
-                    }`}
-                    style={{
-                      width:
-                        `${skill.percentage}%`
-                    }}
-                  ></div>
+    <div className="skill-bar">
+      <div
+        className="skill-progress cyan"
+        style={{ width: "70%" }}
+      ></div>
+    </div>
+  </div>
 
-                </div>
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>PHP & MySQL</span>
+      <span>75%</span>
+    </div>
 
-                {/* FEATURES */}
-                <div className="skill-tags">
+    <div className="skill-bar">
+      <div
+        className="skill-progress blue"
+        style={{ width: "75%" }}
+      ></div>
+    </div>
+  </div>
 
-                  {
-                    skill.features.map(
-                      (feature, i) => (
+  <div className="skill-box">
+    <div className="skill-info">
+      <span>Git & GitHub</span>
+      <span>85%</span>
+    </div>
 
-                        <span
-                          key={i}
-                          className="skill-tag"
-                        >
+    <div className="skill-bar">
+      <div
+        className="skill-progress cyan"
+        style={{ width: "85%" }}
+      ></div>
+    </div>
+  </div>
 
-                          {feature}
-
-                        </span>
-
-                      )
-                    )
-                  }
-
-                </div>
-
-              </div>
-
-            ))
-          }
-
-        </div>
-
+</div>
       </div>
-
     </section>
   );
 }
