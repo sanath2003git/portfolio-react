@@ -1,5 +1,4 @@
 import projectsData from "../data/projectsData";
-import skillWeights from "../data/skillWeights";
 
 function calculateSkills() {
 
@@ -15,14 +14,18 @@ function calculateSkills() {
     Object.keys(technologies)
       .forEach((tech) => {
 
-        // Initialize score
+        // Initialize
         if (!skillScores[tech]) {
 
-          skillScores[tech] = 0;
+          skillScores[tech] = {
+            score: 0,
+            advanced: 0,
+            intermediate: 0,
+            beginner: 0
+          };
 
         }
 
-        // Initialize features
         if (!skillFeatures[tech]) {
 
           skillFeatures[tech] = [];
@@ -30,15 +33,42 @@ function calculateSkills() {
         }
 
         technologies[tech]
-          .forEach((feature) => {
+          .forEach((item) => {
 
-            // Add feature score
-            skillScores[tech] +=
-              skillWeights[feature] || 0;
+            // Add score
+            skillScores[tech].score +=
+              item.weight;
 
-            // Store features
+            // Count difficulty
+            if (
+              item.difficulty === "Advanced"
+            ) {
+
+              skillScores[tech]
+                .advanced += 1;
+
+            }
+
+            else if (
+              item.difficulty ===
+              "Intermediate"
+            ) {
+
+              skillScores[tech]
+                .intermediate += 1;
+
+            }
+
+            else {
+
+              skillScores[tech]
+                .beginner += 1;
+
+            }
+
+            // Store feature names
             skillFeatures[tech]
-              .push(feature);
+              .push(item.feature);
 
           });
 
@@ -46,14 +76,17 @@ function calculateSkills() {
 
   });
 
-  // Find highest score
-  const maxScore =
-    Math.max(
-      ...Object.values(skillScores)
-    );
+  // Highest score
+  const maxScore = Math.max(
 
-  // Generate final data
+    ...Object.values(skillScores)
+      .map((item) => item.score)
+
+  );
+
+  // Final formatted skills
   const finalSkills =
+
     Object.keys(skillScores)
       .map((tech) => ({
 
@@ -61,17 +94,33 @@ function calculateSkills() {
 
         percentage: Math.round(
 
-          (skillScores[tech] / maxScore)
-          * 100
+  40 +
 
-        ),
+  (
+    (
+      skillScores[tech].score
+      / maxScore
+    ) * 60
+  )
+
+),
 
         score:
-          skillScores[tech],
+          skillScores[tech].score,
+
+        advanced:
+          skillScores[tech].advanced,
+
+        intermediate:
+          skillScores[tech]
+            .intermediate,
+
+        beginner:
+          skillScores[tech]
+            .beginner,
 
         features:
 
-          // Remove duplicates
           [...new Set(
             skillFeatures[tech]
           )]
@@ -79,6 +128,7 @@ function calculateSkills() {
       }));
 
   return finalSkills;
+
 }
 
 export default calculateSkills;
