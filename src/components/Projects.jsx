@@ -1,113 +1,136 @@
-import ProjectCard from './ProjectCard';
-import animeImage from "../assets/anime.png";
+import ProjectCard from "./ProjectCard";
 
-import hostelImage from "../assets/hostel.png";
+import animeImage
+from "../assets/anime.png";
 
-import expenseImage from "../assets/expense.png";
+import hostelImage
+from "../assets/hostel.png";
 
-import portfolioImage from "../assets/portfolio.png";
+import expenseImage
+from "../assets/expense.png";
+
+import portfolioImage
+from "../assets/portfolio.png";
 
 const projects = [
 
   {
-  title: "Event Management System",
+    title: "Event Management System",
 
-  image: animeImage,
+    category: "Full Stack",
 
-  description:
-    "A Django-based event management platform featuring event creation, booking management, user authentication, role-based dashboards, seat management, and organizer controls.",
+    image: animeImage,
 
-  tech: [
-    "Django",
-    "Python",
-    "SQLite",
-    "Bootstrap",
-    "HTML",
-    "CSS",
-    "JavaScript"
-  ],
+    description:
+      "Django-based event platform with booking system, dashboards, authentication, and organizer controls.",
+
+    tech: [
+      "Django",
+      "Python",
+      "SQLite",
+      "Bootstrap"
+    ],
 
     github:
       "https://github.com/sanath2003git/event-management-system-2",
+
+demo: "https://github.com/sanath2003git/event-management-system-2"
   },
 
   {
-  title: "Anime Movie App",
+    title: "Anime Movie App",
 
-  image: animeImage,
+    category: "Frontend",
 
-  description:
-    "A React-based anime movie application with movie search, favorites system, dynamic movie details pages, responsive UI, and localStorage support.",
+    image: animeImage,
 
-  tech: ["React", "JavaScript", "CSS", "React Router", "Vite"],
+    description:
+      "React anime movie app with search, routing, favorites system, and responsive UI.",
+
+    tech: [
+      "React",
+      "JavaScript",
+      "CSS",
+      "React Router",
+      "Vite"
+    ],
 
     github:
-      "https://github.com/sanath2003git/movie_"
+      "https://github.com/sanath2003git/movie_",
+
+demo: "https://github.com/sanath2003git/movie_"
   },
 
   {
-  title: "Hostel Leave Management System",
+    title:
+      "Hostel Leave Management System",
 
-  image: hostelImage,
+    category: "Full Stack",
 
-  description:
-    "A PHP-based hostel management platform featuring online leave requests, leave approval workflow, attendance tracking, unauthorized absence detection, student outing monitoring, automated email notifications, and role-based dashboards for students and wardens.",
+    image: hostelImage,
 
-  tech: [
-    "PHP",
-    "MySQL",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "PHPMailer",
-    "Bootstrap"
-  ],
+    description:
+      "PHP-based hostel management platform with leave approval workflow, attendance tracking, and dashboards.",
+
+    tech: [
+      "PHP",
+      "MySQL",
+      "Bootstrap",
+      "JavaScript"
+    ],
 
     github:
-      "https://github.com/sanath2003git/hostel-leave-management-system"
+      "https://github.com/sanath2003git/hostel-leave-management-system",
+
+demo: "https://github.com/sanath2003git/hostel-leave-management-system"
   },
 
   {
-  title: "Expense Tracker System",
+    title: "Expense Tracker System",
 
-  image: expenseImage,
+    category: "Backend",
 
-  description:
-    "A Flask-based expense tracking platform featuring user authentication, friend-based expense splitting, balance tracking, multi-user expense management, responsive dashboards, expense history, category-based expense organization, and secure CRUD operations.",
+    image: expenseImage,
 
-  tech: [
-    "Python",
-    "Flask",
-    "SQLAlchemy",
-    "SQLite",
-    "HTML",
-    "CSS",
-    "Bootstrap",
-    "JavaScript"
-  ],
+    description:
+      "Flask expense tracker with authentication, expense splitting, dashboards, and CRUD operations.",
+
+    tech: [
+      "Python",
+      "Flask",
+      "SQLAlchemy",
+      "SQLite"
+    ],
 
     github:
-      "https://github.com/sanath2003git/Expense-tracker"
-  },{
-  title: "React Portfolio Website",
+      "https://github.com/sanath2003git/Expense-tracker",
 
-  image: portfolioImage,
+demo: "https://github.com/sanath2003git/Expense-tracker"
+  },
 
-  description:
-    "A modern responsive portfolio website built with React and Vite featuring smooth scrolling, reusable components, responsive design, animated sections, and project showcase cards.",
+  {
+    title:
+      "React Portfolio Website",
 
-  tech: [
-    "React",
-    "Vite",
-    "JavaScript",
-    "CSS",
-    "HTML",
-    "React Icons"
-  ],
+    category: "Frontend",
 
-  github:
-    "https://github.com/sanath2003git/portfolio-react"
-}
+    image: portfolioImage,
+
+    description:
+      "Modern responsive portfolio built using React and Vite with reusable components and dynamic analytics.",
+
+    tech: [
+      "React",
+      "Vite",
+      "JavaScript",
+      "CSS"
+    ],
+
+    github:
+      "https://github.com/sanath2003git/portfolio-react",
+
+demo: "https://sanath-portfolio-one.vercel.app/"
+  }
 
 ];
 
@@ -117,31 +140,49 @@ function Projects() {
 
     <section
       id="projects"
-      className="projects-section reveal">
+      className="projects-section reveal"
+    >
 
       <div className="projects-wrapper">
 
+        {/* HEADING */}
         <div className="projects-heading">
 
-  <h2 className="projects-title">
-    Projects
-  </h2>
+          <h2 className="projects-title">
 
-  <div className="section-line1"></div>
+            Projects
 
-</div>
+          </h2>
 
+          <div className="section-line1"></div>
+
+        </div>
+
+        {/* PROJECT GRID */}
         <div className="projects-container">
 
           {projects.map((project) => (
 
             <ProjectCard
+
               key={project.title}
+
               title={project.title}
+
+              category={project.category}
+
               image={project.image}
-              description={project.description}
+
+              description={
+                project.description
+              }
+
               tech={project.tech}
+
               github={project.github}
+
+              demo={project.demo}
+
             />
 
           ))}
