@@ -52,6 +52,11 @@ function About() {
           <ul>
 
             <li>
+              <FaCodeBranch className="interest-icon" />
+              Full-Stack Development
+            </li>
+
+            <li>
               <FaGlobeAsia className="interest-icon" />
               GIS & Spatial Data
             </li>
@@ -60,13 +65,7 @@ function About() {
               <FaLeaf className="interest-icon" />
               Integrated Farming
             </li>
-
-            <li>
-              <FaCodeBranch className="interest-icon" />
-              Full-Stack Development
-            </li>
-
-
+            
           </ul>
 
         </div>
