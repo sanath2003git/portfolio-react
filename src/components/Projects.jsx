@@ -1,5 +1,8 @@
 import ProjectCard from "./ProjectCard";
 
+import eventImage
+from "../assets/event.png";
+
 import animeImage
 from "../assets/anime.png";
 
@@ -19,7 +22,7 @@ const projects = [
 
     category: "Full Stack",
 
-    image: animeImage,
+    image: eventImage,
 
     description:
       "Django-based event platform with booking system, dashboards, authentication, and organizer controls.",
@@ -34,7 +37,7 @@ const projects = [
     github:
       "https://github.com/sanath2003git/event-management-system-2",
 
-demo: "https://github.com/sanath2003git/event-management-system-2"
+demo: "https://sanathsreekumar.pythonanywhere.com/"
   },
 
   {
