@@ -7,32 +7,68 @@ import {
   FaPhp,
   FaGitAlt,
   FaGithub,
+  FaJava,
+  FaCode,
+  FaDatabase,
   FaTools,
+  FaShieldAlt,
 } from "react-icons/fa";
 
 import {
+  SiNextdotjs,
+  SiBootstrap,
+  SiTailwindcss,
   SiDjango,
   SiFlask,
-  SiVite,
   SiMysql,
+  SiMongodb,
   SiSqlite,
   SiSqlalchemy,
+  SiMongoose,
+  SiGraphql,
+  SiPostman,
+  SiXampp,
+  SiVercel,
+  SiVite,
 } from "react-icons/si";
 
 function Skills() {
   const skillCategories = [
     {
-      title: "Frontend",
-      icon: <FaReact />,
+      title: "Languages",
+      icon: <FaCode />,
       skills: [
         {
-          name: "React",
-          icon: <FaReact />,
+          name: "Python",
+          icon: <FaPython />,
+        },
+        {
+          name: "Java",
+          icon: <FaJava />,
+        },
+        {
+          name: "C",
+          icon: <FaCode />,
         },
         {
           name: "JavaScript",
           icon: <FaJsSquare />,
         },
+        {
+          name: "SQL",
+          icon: <FaDatabase />,
+        },
+        {
+          name: "PHP",
+          icon: <FaPhp />,
+        },
+      ],
+    },
+
+    {
+      title: "Frontend",
+      icon: <FaReact />,
+      skills: [
         {
           name: "HTML",
           icon: <FaHtml5 />,
@@ -40,6 +76,26 @@ function Skills() {
         {
           name: "CSS",
           icon: <FaCss3Alt />,
+        },
+        {
+          name: "JavaScript",
+          icon: <FaJsSquare />,
+        },
+        {
+          name: "React",
+          icon: <FaReact />,
+        },
+        {
+          name: "Next.js",
+          icon: <SiNextdotjs />,
+        },
+        {
+          name: "Bootstrap",
+          icon: <SiBootstrap />,
+        },
+        {
+          name: "Tailwind CSS",
+          icon: <SiTailwindcss />,
         },
         {
           name: "React Router",
@@ -57,31 +113,31 @@ function Skills() {
       icon: <FaPython />,
       skills: [
         {
-          name: "Python",
-          icon: <FaPython />,
+          name: "Django",
+          icon: <SiDjango />,
         },
         {
-          name: "Django",
+          name: "Django REST Framework",
           icon: <SiDjango />,
         },
         {
           name: "Flask",
           icon: <SiFlask />,
         },
-        {
-          name: "PHP",
-          icon: <FaPhp />,
-        },
       ],
     },
 
     {
-      title: "Databases",
-      icon: <SiMysql />,
+      title: "Databases & ORM",
+      icon: <FaDatabase />,
       skills: [
         {
           name: "MySQL",
           icon: <SiMysql />,
+        },
+        {
+          name: "MongoDB",
+          icon: <SiMongodb />,
         },
         {
           name: "SQLite",
@@ -91,11 +147,46 @@ function Skills() {
           name: "SQLAlchemy",
           icon: <SiSqlalchemy />,
         },
+        {
+          name: "Django ORM",
+          icon: <SiDjango />,
+        },
+        {
+          name: "Mongoose",
+          icon: <SiMongoose />,
+        },
       ],
     },
 
     {
-      title: "Tools",
+      title: "APIs & Data",
+      icon: <FaCode />,
+      skills: [
+        {
+          name: "REST APIs",
+          icon: <FaCode />,
+        },
+        {
+          name: "GraphQL",
+          icon: <SiGraphql />,
+        },
+        {
+          name: "JSON",
+          icon: <FaCode />,
+        },
+        {
+          name: "Graphene-Django",
+          icon: <SiGraphql />,
+        },
+        {
+          name: "JWT",
+          icon: <FaShieldAlt />,
+        },
+      ],
+    },
+
+    {
+      title: "Tools & Platforms",
       icon: <FaTools />,
       skills: [
         {
@@ -107,15 +198,31 @@ function Skills() {
           icon: <FaGithub />,
         },
         {
+          name: "Postman",
+          icon: <SiPostman />,
+        },
+        {
           name: "VS Code",
-          icon: <FaTools /> ,
+          icon: <FaTools />,
+        },
+        {
+          name: "XAMPP",
+          icon: <SiXampp />,
+        },
+        {
+          name: "MongoDB Atlas",
+          icon: <SiMongodb />,
+        },
+        {
+          name: "Vercel",
+          icon: <SiVercel />,
         },
       ],
     },
   ];
 
   return (
-    <section id="skills" className="skills-section">
+    <section id="skills" className="skills-section reveal">
       <div className="skills-container">
 
         <div className="skills-heading">
@@ -127,11 +234,11 @@ function Skills() {
 
           <p className="skills-description">
             Technologies and tools I use to build responsive interfaces,
-            full-stack applications, and data-driven solutions.
+            full-stack applications, APIs, and data-driven solutions.
           </p>
         </div>
 
-        <div className="skills-grid">
+        <div className="skills-grid reveal-stagger">
           {skillCategories.map((category) => (
             <div className="skill-box" key={category.title}>
 
