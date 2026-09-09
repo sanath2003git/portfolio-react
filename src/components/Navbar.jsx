@@ -1,165 +1,110 @@
 import { useState, useEffect } from "react";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const [menuOpen, setMenuOpen] =
-    useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
 
-  const [scrolled, setScrolled] =
-    useState(false);
+    window.addEventListener("scroll", handleScroll);
 
-  // Close Mobile Menu
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-  // Navbar Scroll Effect
-  useEffect(() => {
-
-    const handleScroll = () => {
-
-      setScrolled(window.scrollY > 50);
-
-    };
-
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
-
-    return () => {
-
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
-
-    };
-
-  }, []);
-
   return (
-
-    <nav
-  className={`navbar ${scrolled ? "scrolled" : ""} container-fluid`}
->
-
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       {/* LOGO */}
-      <h1 className="logo ">
+      <a href="#home" className="logo">
         SANATH
-      </h1>
+      </a>
 
-      {/* DESKTOP MENU */}
-      <ul className="desktop-menu">
-
+      {/* DESKTOP NAVIGATION */}
+      <ul className="nav-links">
         <li>
-          <a href="#home">
-            Home
-          </a>
+          <a href="#home">Home</a>
         </li>
 
         <li>
-          <a href="#about">
-            About
-          </a>
+          <a href="#about">About</a>
         </li>
 
         <li>
-          <a href="#skills">
-            Skills
-          </a>
+          <a href="#skills">Skills</a>
         </li>
 
         <li>
-          <a href="#projects">
-            Projects
-          </a>
+          <a href="#projects">Projects</a>
         </li>
 
         <li>
-          <a href="#contact">
-            Socials
-          </a>
+          <a href="#contact">Connect</a>
         </li>
 
+        <li>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn"
+          >
+            Resume
+          </a>
+        </li>
       </ul>
 
-      {/* MOBILE BUTTON */}
-      <div className="nav-right">
+      {/* MOBILE MENU BUTTON */}
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
 
-        <button
-          className="menu-btn"
-          onClick={() =>
-            setMenuOpen(!menuOpen)
-          }
+      {/* MOBILE NAVIGATION */}
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <a href="#home" onClick={closeMenu}>
+          Home
+        </a>
+
+        <a href="#about" onClick={closeMenu}>
+          About
+        </a>
+
+        <a href="#skills" onClick={closeMenu}>
+          Skills
+        </a>
+
+        <a href="#projects" onClick={closeMenu}>
+          Projects
+        </a>
+
+        <a href="#contact" onClick={closeMenu}>
+          Connect
+        </a>
+
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="resume-btn"
+          onClick={closeMenu}
         >
-
-          {menuOpen
-            ? "✕"
-            : "☰"}
-
-        </button>
-
+          Resume
+        </a>
       </div>
-
-      {/* MOBILE MENU */}
-      {menuOpen && (
-
-        <ul className="mobile-menu">
-
-          <li>
-            <a
-              href="#home"
-              onClick={closeMenu}
-            >
-              Home
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#about"
-              onClick={closeMenu}
-            >
-              About
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#skills"
-              onClick={closeMenu}
-            >
-              Skills
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#projects"
-              onClick={closeMenu}
-            >
-              Projects
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#contact"
-              onClick={closeMenu}
-            >
-              Socials
-            </a>
-          </li>
-
-        </ul>
-
-      )}
-
     </nav>
-
   );
-
 }
 
 export default Navbar;

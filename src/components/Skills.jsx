@@ -1,97 +1,168 @@
-import "../index.css";
+import {
+  FaReact,
+  FaJsSquare,
+  FaHtml5,
+  FaCss3Alt,
+  FaPython,
+  FaPhp,
+  FaGitAlt,
+  FaGithub,
+  FaTools,
+} from "react-icons/fa";
 
-import calculateSkills
-from "../utils/calculateSkills";
+import {
+  SiDjango,
+  SiFlask,
+  SiVite,
+  SiMysql,
+  SiSqlite,
+  SiSqlalchemy,
+} from "react-icons/si";
 
 function Skills() {
+  const skillCategories = [
+    {
+      title: "Frontend",
+      icon: <FaReact />,
+      skills: [
+        {
+          name: "React",
+          icon: <FaReact />,
+        },
+        {
+          name: "JavaScript",
+          icon: <FaJsSquare />,
+        },
+        {
+          name: "HTML",
+          icon: <FaHtml5 />,
+        },
+        {
+          name: "CSS",
+          icon: <FaCss3Alt />,
+        },
+        {
+          name: "React Router",
+          icon: <FaReact />,
+        },
+        {
+          name: "Vite",
+          icon: <SiVite />,
+        },
+      ],
+    },
 
-  const skills =
-    calculateSkills();
+    {
+      title: "Backend",
+      icon: <FaPython />,
+      skills: [
+        {
+          name: "Python",
+          icon: <FaPython />,
+        },
+        {
+          name: "Django",
+          icon: <SiDjango />,
+        },
+        {
+          name: "Flask",
+          icon: <SiFlask />,
+        },
+        {
+          name: "PHP",
+          icon: <FaPhp />,
+        },
+      ],
+    },
+
+    {
+      title: "Databases",
+      icon: <SiMysql />,
+      skills: [
+        {
+          name: "MySQL",
+          icon: <SiMysql />,
+        },
+        {
+          name: "SQLite",
+          icon: <SiSqlite />,
+        },
+        {
+          name: "SQLAlchemy",
+          icon: <SiSqlalchemy />,
+        },
+      ],
+    },
+
+    {
+      title: "Tools",
+      icon: <FaTools />,
+      skills: [
+        {
+          name: "Git",
+          icon: <FaGitAlt />,
+        },
+        {
+          name: "GitHub",
+          icon: <FaGithub />,
+        },
+        {
+          name: "VS Code",
+          icon: <FaTools /> ,
+        },
+      ],
+    },
+  ];
 
   return (
-
-    <section
-      className="skills-section"
-      id="skills"
-    >
-
+    <section id="skills" className="skills-section">
       <div className="skills-container">
 
-        <h2 className="skills-title">
-          Technical Skills
-        </h2>
+        <div className="skills-heading">
+          <p className="section-label">03 — SKILLS</p>
+
+          <h2 className="skills-title">
+            Technical <span>Skills</span>
+          </h2>
+
+          <p className="skills-description">
+            Technologies and tools I use to build responsive interfaces,
+            full-stack applications, and data-driven solutions.
+          </p>
+        </div>
 
         <div className="skills-grid">
+          {skillCategories.map((category) => (
+            <div className="skill-box" key={category.title}>
 
-          {
-            skills.map((skill, index) => (
-
-              <div
-                className="skill-box"
-                key={index}
-              >
-
-                {/* TOP */}
-                <div className="skill-info">
-
-                  <span>
-                    {skill.name}
-                  </span>
-
-                  <span>
-                    {skill.percentage}%
-                  </span>
-
+              <div className="skill-category-header">
+                <div className="skill-category-icon">
+                  {category.icon}
                 </div>
 
-                {/* BAR */}
-                <div className="skill-bar">
-
-                  <div
-                    className={`skill-progress ${
-                      index % 2 === 0
-                        ? "blue"
-                        : "cyan"
-                    }`}
-                    style={{
-                      width:
-                        `${skill.percentage}%`
-                    }}
-                  ></div>
-
-                </div>
-
-                {/* FEATURES */}
-                <div className="skill-tags">
-
-                  {
-                    skill.features.map(
-                      (feature, i) => (
-
-                        <span
-                          key={i}
-                          className="skill-tag"
-                        >
-
-                          {feature}
-
-                        </span>
-
-                      )
-                    )
-                  }
-
-                </div>
-
+                <h3>{category.title}</h3>
               </div>
 
-            ))
-          }
+              <div className="skill-tags">
+                {category.skills.map((skill) => (
+                  <span
+                    className="skill-tag"
+                    key={skill.name}
+                  >
+                    <span className="skill-tag-icon">
+                      {skill.icon}
+                    </span>
 
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+
+            </div>
+          ))}
         </div>
 
       </div>
-
     </section>
   );
 }

@@ -1,116 +1,76 @@
-import {
-  FaGithub,
-  FaExternalLinkAlt
-} from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 function ProjectCard({
-
   title,
   image,
   description,
   tech,
   github,
   demo,
-  category = "Full Stack Project"
-
+  category = "Full Stack",
+  featured = false,
 }) {
-
   return (
-
-    <div className="project-card">
-
+    <article className={`project-card ${featured ? "featured-card" : ""}`}>
       {/* PROJECT IMAGE */}
-      <div className="project-image-wrapper">
-
+      <div className="project-image">
         <img
           src={image}
-          alt={title}
-          className="project-image"
+          alt={`${title} project screenshot`}
         />
-
       </div>
 
-      {/* CONTENT */}
+      {/* PROJECT CONTENT */}
       <div className="project-card-content">
 
-        {/* CATEGORY */}
         <span className="project-category">
-
           {category}
-
         </span>
 
-        {/* TITLE */}
         <h3>{title}</h3>
 
-        {/* DESCRIPTION */}
         <p>{description}</p>
 
-        {/* TECH STACK */}
+        {/* TECHNOLOGIES */}
         <div className="tech-stack">
-
-          {tech?.map((item) => (
-
+          {tech.map((technology) => (
             <span
-              key={item}
               className="tech-badge"
+              key={technology}
             >
-
-              {item}
-
+              {technology}
             </span>
-
           ))}
-
         </div>
 
-        {/* BUTTONS */}
+        {/* LINKS */}
         <div className="project-links">
-
-          {/* GITHUB BUTTON */}
           <a
             href={github}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="project-link"
           >
-
             <FaGithub />
-
-            <span>
-              View Code
-            </span>
-
+            <span>View Code</span>
           </a>
 
-          {/* DEMO BUTTON */}
           {demo && (
-
             <a
               href={demo}
               target="_blank"
-              rel="noreferrer"
-              className="demo-link"
+              rel="noopener noreferrer"
+              className="project-link demo-link"
             >
-
               <FaExternalLinkAlt />
-
-              <span>
-                Live Demo
-              </span>
-
+              <span>Live Demo</span>
             </a>
-
           )}
-
         </div>
 
       </div>
-
-    </div>
-
+    </article>
   );
-
 }
 
 export default ProjectCard;
