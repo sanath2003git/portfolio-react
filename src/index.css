@@ -2,8 +2,7 @@
    SANATH PORTFOLIO — GLOBAL STYLES
    ========================================================= */
 
-/* ---------- Google Fonts ---------- */
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+/* Keep your existing Google Fonts import at the top of this file. */
 
 
 /* =========================================================
@@ -262,9 +261,6 @@ code,
     box-shadow var(--transition);
 }
 
-
-/* ---------- Navbar Inner ---------- */
-
 .navbar-inner {
   width: 100%;
   max-width: var(--content-width);
@@ -275,9 +271,6 @@ code,
   align-items: center;
   justify-content: space-between;
 }
-
-
-/* ---------- Scrolled ---------- */
 
 .navbar.scrolled {
   background: rgba(3, 7, 18, 0.94);
@@ -535,24 +528,58 @@ code,
   pointer-events: none;
 }
 
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
 .hero-content {
   position: relative;
 
   z-index: 1;
 
   width: 100%;
-  max-width: 900px;
+
+  /*
+   * Increased from 900px so the complete name
+   * can remain on one line on desktop.
+   */
+  max-width: 1250px;
+
+  margin: 0 auto;
 }
 
+
+/* =========================================================
+   HERO NAME
+   ========================================================= */
+
 .hero-content h1 {
+  width: 100%;
+
   margin-bottom: 22px;
 
-  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  /*
+   * Automatically scales:
+   *
+   * Desktop -> large
+   * Tablet  -> medium
+   * Mobile  -> small enough to stay on one line
+   */
+  font-size: clamp(1.15rem, 5.5vw, 5.8rem);
+
   font-weight: 800;
 
   line-height: 1.05;
 
   letter-spacing: -0.055em;
+
+  /*
+   * IMPORTANT:
+   * Prevents "C S Sanath Sreekumar"
+   * from wrapping.
+   */
+  white-space: nowrap;
 
   background: linear-gradient(
     135deg,
@@ -567,6 +594,11 @@ code,
   color: transparent;
 }
 
+
+/* =========================================================
+   HERO SUBTITLE
+   ========================================================= */
+
 .hero-content p {
   margin: 0 auto 36px;
 
@@ -574,10 +606,15 @@ code,
 
   font-family: "Fira Code", monospace;
 
-  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-size: clamp(0.85rem, 2vw, 1.15rem);
 
   line-height: 1.7;
 }
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
 
 .hero-buttons {
   display: flex;
@@ -1494,9 +1531,6 @@ code,
   transform: translateX(3px);
 }
 
-
-/* ---------- Live Demo ---------- */
-
 .demo-link {
   min-width: 125px;
 
@@ -2036,7 +2070,7 @@ footer a:hover {
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -2058,8 +2092,20 @@ footer a:hover {
 
     padding: 9px 15px;
   }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+  }
 }
 
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
 
 @media (max-width: 992px) {
 
@@ -2105,7 +2151,7 @@ footer a:hover {
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -2214,13 +2260,57 @@ footer a:hover {
     min-height: 90vh;
 
     padding-top: 120px;
+
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
+  .hero-content {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  /*
+   * IMPORTANT:
+   * Keep the complete name on one line.
+   *
+   * The clamp becomes smaller automatically
+   * on narrow phones.
+   */
   .hero-content h1 {
-    font-size: clamp(2.5rem, 11vw, 4rem);
+    width: 100%;
+
+    font-size: clamp(1.15rem, 7vw, 3.2rem);
+
+    white-space: nowrap;
+
+    letter-spacing: -0.05em;
+
+    margin-bottom: 18px;
   }
 
   .hero-content p {
+    font-size: 0.78rem;
+
+    line-height: 1.6;
+
+    padding: 0 5px;
+  }
+
+
+  /* ---------- Hero Buttons ---------- */
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-width: 145px;
+
+    padding: 12px 18px;
+
     font-size: 0.82rem;
   }
 
@@ -2417,12 +2507,10 @@ footer a:hover {
 
 
 /* =========================================================
-   RESPONSIVE — SMALL MOBILE
+   SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
-
-  /* ---------- General ---------- */
 
   section {
     padding: 70px 4%;
@@ -2443,20 +2531,38 @@ footer a:hover {
   /* ---------- Hero ---------- */
 
   #home {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
+  /*
+   * Full name remains on ONE LINE.
+   *
+   * At 320px screens the font becomes
+   * approximately 18px so it fits safely.
+   */
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.15rem, 7.2vw, 2.1rem);
+
+    white-space: nowrap;
 
     letter-spacing: -0.045em;
+  }
+
+  .hero-content p {
+    font-size: 0.7rem;
+
+    padding: 0;
+
+    white-space: nowrap;
   }
 
   .hero-buttons {
     flex-direction: column;
 
     width: 100%;
+
+    padding: 0 15px;
   }
 
   .btn-primary,
@@ -2582,6 +2688,28 @@ footer a:hover {
 
 
 /* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .hero-content h1 {
+    font-size: 1.1rem;
+
+    letter-spacing: -0.04em;
+  }
+
+  .hero-content p {
+    font-size: 0.64rem;
+  }
+
+  .hero-buttons {
+    padding: 0 10px;
+  }
+}
+
+
+/* =========================================================
    LARGE DESKTOP POLISH
    ========================================================= */
 
@@ -2595,6 +2723,10 @@ footer a:hover {
   section {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .hero-content {
+    max-width: 1450px;
   }
 
   .hero-content h1 {
@@ -2611,5 +2743,25 @@ footer a:hover {
 
   .featured-card .project-image {
     min-height: 460px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
