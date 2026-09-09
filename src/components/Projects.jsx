@@ -14,10 +14,16 @@ function Projects() {
       image: eventImage,
       description:
         "Django-based event platform with booking system, dashboards, authentication, and organizer controls.",
-      tech: ["Django", "Python", "SQLite", "Bootstrap"],
+      tech: [
+        "Django",
+        "Python",
+        "SQLite",
+        "Bootstrap",
+      ],
       github:
         "https://github.com/sanath2003git/event-management-system-2",
-      demo: "https://sanathsreekumar.pythonanywhere.com/",
+      demo:
+        "https://sanathsreekumar.pythonanywhere.com/",
     },
 
     {
@@ -33,8 +39,10 @@ function Projects() {
         "React Router",
         "Vite",
       ],
-      github: "https://github.com/sanath2003git/movie_",
-      demo: "https://github.com/sanath2003git/movie_",
+      github:
+        "https://github.com/sanath2003git/movie_",
+      demo:
+        "https://github.com/sanath2003git/movie_",
     },
 
     {
@@ -43,7 +51,12 @@ function Projects() {
       image: hostelImage,
       description:
         "PHP-based hostel management platform with leave approval workflow, attendance tracking, and dashboards.",
-      tech: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
+      tech: [
+        "PHP",
+        "MySQL",
+        "Bootstrap",
+        "JavaScript",
+      ],
       github:
         "https://github.com/sanath2003git/hostel-leave-management-system",
       demo:
@@ -56,9 +69,16 @@ function Projects() {
       image: expenseImage,
       description:
         "Flask expense tracker with authentication, expense splitting, dashboards, and CRUD operations.",
-      tech: ["Python", "Flask", "SQLAlchemy", "SQLite"],
-      github: "https://github.com/sanath2003git/Expense-tracker",
-      demo: "https://github.com/sanath2003git/Expense-tracker",
+      tech: [
+        "Python",
+        "Flask",
+        "SQLAlchemy",
+        "SQLite",
+      ],
+      github:
+        "https://github.com/sanath2003git/Expense-tracker",
+      demo:
+        "https://github.com/sanath2003git/Expense-tracker",
     },
 
     {
@@ -67,43 +87,50 @@ function Projects() {
       image: portfolioImage,
       description:
         "Modern responsive portfolio built using React and Vite with reusable components and dynamic analytics.",
-      tech: ["React", "Vite", "JavaScript", "CSS"],
-      github: "https://github.com/sanath2003git/portfolio-react",
-      demo: "https://sanath-portfolio-one.vercel.app/",
+      tech: [
+        "React",
+        "Vite",
+        "JavaScript",
+        "CSS",
+      ],
+      github:
+        "https://github.com/sanath2003git/portfolio-react",
+      demo:
+        "https://sanath-portfolio-one.vercel.app/",
     },
   ];
-
-  const [featuredProject, ...otherProjects] = projects;
 
   return (
     <section id="projects">
       <div className="projects-container">
 
-        {/* SECTION HEADING */}
         <div className="projects-heading">
-          <p className="section-label">04 — PROJECTS</p>
+          <div className="section-label">
+            04 — PROJECTS
+          </div>
 
           <h2 className="projects-title">
             Featured <span>Projects</span>
           </h2>
 
           <p className="projects-description">
-            A selection of applications and projects I have built
-            using modern frontend, backend, and database technologies.
+            A selection of applications and projects I
+            have built using modern frontend, backend,
+            and database technologies.
           </p>
         </div>
 
-        {/* FEATURED PROJECT */}
+        {/* Featured Project */}
         <div className="featured-project">
           <ProjectCard
-            {...featuredProject}
+            {...projects[0]}
             featured
           />
         </div>
 
-        {/* OTHER PROJECTS */}
-        <div className="projects-grid project-list">
-          {otherProjects.map((project) => (
+        {/* Other Projects */}
+        <div className="project-list">
+          {projects.slice(1).map((project) => (
             <ProjectCard
               key={project.title}
               {...project}

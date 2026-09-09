@@ -1,4 +1,7 @@
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 function ProjectCard({
   title,
@@ -7,12 +10,15 @@ function ProjectCard({
   tech,
   github,
   demo,
-  category = "Full Stack",
+  category = "Full Stack Project",
   featured = false,
 }) {
   return (
-    <article className={`project-card ${featured ? "featured-card" : ""}`}>
-      {/* PROJECT IMAGE */}
+    <article
+      className={`project-card ${
+        featured ? "featured-card" : ""
+      }`}
+    >
       <div className="project-image">
         <img
           src={image}
@@ -20,9 +26,7 @@ function ProjectCard({
         />
       </div>
 
-      {/* PROJECT CONTENT */}
       <div className="project-card-content">
-
         <span className="project-category">
           {category}
         </span>
@@ -31,19 +35,17 @@ function ProjectCard({
 
         <p>{description}</p>
 
-        {/* TECHNOLOGIES */}
         <div className="tech-stack">
-          {tech.map((technology) => (
+          {tech.map((item) => (
             <span
               className="tech-badge"
-              key={technology}
+              key={item}
             >
-              {technology}
+              {item}
             </span>
           ))}
         </div>
 
-        {/* LINKS */}
         <div className="project-links">
           <a
             href={github}
@@ -67,7 +69,6 @@ function ProjectCard({
             </a>
           )}
         </div>
-
       </div>
     </article>
   );
