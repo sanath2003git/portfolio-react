@@ -13,6 +13,7 @@
 :root {
   --bg-primary: #030712;
   --bg-secondary: #07101f;
+
   --bg-card: rgba(15, 23, 42, 0.42);
   --bg-card-hover: rgba(15, 23, 42, 0.65);
 
@@ -64,8 +65,8 @@ body {
   min-height: 100vh;
 
   font-family: "Inter", sans-serif;
-  color: var(--text-primary);
 
+  color: var(--text-primary);
   background-color: var(--bg-primary);
 
   overflow-x: hidden;
@@ -159,12 +160,14 @@ img {
 
 section {
   position: relative;
+
   padding: 110px 8%;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
+
   margin: 0 auto;
 }
 
@@ -173,6 +176,7 @@ section {
 
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800;
+
   line-height: 1.1;
 
   letter-spacing: -0.04em;
@@ -184,6 +188,7 @@ section {
 
 .section-subtitle {
   max-width: 650px;
+
   margin-top: -35px;
   margin-bottom: 45px;
 
@@ -196,6 +201,20 @@ section {
 code,
 .fira-code {
   font-family: "Fira Code", monospace;
+}
+
+.section-label {
+  margin-bottom: 12px;
+
+  color: var(--blue);
+
+  font-family: "Fira Code", monospace;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 
@@ -246,6 +265,7 @@ nav.scrolled {
   color: var(--text-primary);
 
   font-family: "Fira Code", monospace;
+
   font-size: 1.35rem;
   font-weight: 700;
 
@@ -266,6 +286,7 @@ nav.scrolled {
 .nav-links {
   display: flex;
   align-items: center;
+
   gap: 34px;
 
   list-style: none;
@@ -279,8 +300,7 @@ nav.scrolled {
   font-size: 0.9rem;
   font-weight: 500;
 
-  transition:
-    color var(--transition);
+  transition: color var(--transition);
 }
 
 .nav-links a::after {
@@ -311,6 +331,7 @@ nav.scrolled {
 
 .resume-btn {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -447,6 +468,7 @@ nav.scrolled {
 
   -webkit-background-clip: text;
   background-clip: text;
+
   color: transparent;
 }
 
@@ -458,11 +480,13 @@ nav.scrolled {
   font-family: "Fira Code", monospace;
 
   font-size: clamp(0.9rem, 2vw, 1.15rem);
+
   line-height: 1.7;
 }
 
 .hero-buttons {
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -474,6 +498,7 @@ nav.scrolled {
 .btn-primary,
 .btn-secondary {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -537,6 +562,7 @@ nav.scrolled {
 
 .about-section {
   max-width: 1200px;
+
   margin: 0 auto;
 
   display: grid;
@@ -568,6 +594,7 @@ nav.scrolled {
   color: var(--text-secondary);
 
   font-size: 1rem;
+
   line-height: 1.9;
 }
 
@@ -593,15 +620,36 @@ nav.scrolled {
   pointer-events: none;
 }
 
+.about-line {
+  width: 70px;
+  height: 2px;
+
+  margin-bottom: 28px;
+
+  background: var(--blue);
+
+  box-shadow:
+    0 0 15px rgba(13, 110, 253, 0.45);
+}
+
+.interest-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
 .interest-card {
   position: relative;
+
+  min-height: 92px;
 
   display: flex;
   align-items: center;
 
   gap: 18px;
 
-  margin-bottom: 16px;
+  margin-bottom: 0;
   padding: 22px;
 
   border: 1px solid var(--border);
@@ -631,25 +679,55 @@ nav.scrolled {
   box-shadow: var(--shadow-blue);
 }
 
-.interest-card svg {
+.interest-icon {
+  width: 46px;
+  height: 46px;
+
   flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(13, 110, 253, 0.2);
+  border-radius: 10px;
 
   color: var(--blue);
 
-  font-size: 1.4rem;
+  background: rgba(13, 110, 253, 0.08);
+
+  font-size: 1.1rem;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.interest-card:hover .interest-icon {
+  border-color: rgba(13, 110, 253, 0.5);
+
+  background: rgba(13, 110, 253, 0.15);
+
+  transform: scale(1.05);
 }
 
 .interest-card h3 {
   margin-bottom: 4px;
 
-  font-size: 1rem;
-  font-weight: 600;
+  color: var(--text-primary);
+
+  font-size: 0.98rem;
 }
 
 .interest-card p {
-  color: var(--text-muted);
+  margin: 0;
 
-  font-size: 0.82rem;
+  color: var(--text-secondary);
+
+  font-size: 0.78rem;
+
+  line-height: 1.6;
 }
 
 
@@ -668,8 +746,46 @@ nav.scrolled {
     );
 }
 
+.skills-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.skills-heading {
+  max-width: 700px;
+
+  margin-bottom: 45px;
+}
+
+.skills-title {
+  margin-bottom: 18px;
+
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+.skills-title span {
+  color: var(--blue);
+}
+
+.skills-description {
+  max-width: 620px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
 .skills-grid {
   max-width: 1200px;
+
   margin: 0 auto;
 
   display: grid;
@@ -740,8 +856,50 @@ nav.scrolled {
   opacity: 1;
 }
 
-.skill-box h3 {
-  margin-bottom: 18px;
+.skill-category-header {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 24px;
+}
+
+.skill-category-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(13, 110, 253, 0.25);
+  border-radius: 10px;
+
+  color: var(--blue);
+
+  background: rgba(13, 110, 253, 0.08);
+
+  font-size: 1.15rem;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.skill-box:hover .skill-category-icon {
+  border-color: rgba(13, 110, 253, 0.5);
+
+  background: rgba(13, 110, 253, 0.15);
+
+  transform: translateY(-2px);
+}
+
+.skill-category-header h3 {
+  margin: 0;
+
+  color: var(--text-primary);
 
   font-size: 1.1rem;
   font-weight: 700;
@@ -756,43 +914,57 @@ nav.scrolled {
 
   flex-wrap: wrap;
 
-  gap: 9px;
-}
+  gap: 10px;
 
-.skill-tag,
-.skill-box span {
-  font-family: "Fira Code", monospace;
+  margin: 0;
 }
 
 .skill-tag {
   display: inline-flex;
 
-  padding: 7px 11px;
+  align-items: center;
 
-  border: 1px solid rgba(148, 163, 184, 0.15);
+  gap: 8px;
+
+  padding: 8px 11px;
+
+  border: 1px solid rgba(148, 163, 184, 0.13);
   border-radius: 7px;
 
   color: #cbd5e1;
 
   background: rgba(15, 23, 42, 0.7);
 
-  font-size: 0.76rem;
+  font-family: "Fira Code", monospace;
+
+  font-size: 0.72rem;
 
   transition:
     color var(--transition),
     border-color var(--transition),
-    background var(--transition);
+    background var(--transition),
+    transform var(--transition);
 }
 
 .skill-tag:hover {
   color: white;
 
-  border-color: var(--border-blue);
+  border-color: rgba(13, 110, 253, 0.45);
 
   background: rgba(13, 110, 253, 0.1);
+
+  transform: translateY(-2px);
 }
 
-/* Existing progress-bar compatibility */
+.skill-tag-icon {
+  display: inline-flex;
+
+  color: var(--blue);
+
+  font-size: 0.9rem;
+}
+
+/* Old progress-bar compatibility */
 .progress {
   width: 100%;
   height: 6px;
@@ -817,6 +989,11 @@ nav.scrolled {
   transition: width 0.8s ease;
 }
 
+.skill-info,
+.skill-bar {
+  display: none;
+}
+
 
 /* =========================================================
    PROJECTS
@@ -831,8 +1008,52 @@ nav.scrolled {
     );
 }
 
+.projects-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.projects-heading {
+  max-width: 700px;
+
+  margin-bottom: 45px;
+}
+
+.projects-title {
+  margin-bottom: 18px;
+
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+}
+
+.projects-title span {
+  color: var(--blue);
+}
+
+.projects-description {
+  max-width: 650px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+.featured-project {
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
 .projects-grid {
   max-width: 1200px;
+
   margin: 0 auto;
 
   display: grid;
@@ -840,6 +1061,10 @@ nav.scrolled {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 24px;
+}
+
+.project-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .project-card {
@@ -894,6 +1119,7 @@ nav.scrolled {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
@@ -929,6 +1155,7 @@ nav.scrolled {
   align-self: flex-start;
 
   margin-bottom: 12px;
+
   padding: 5px 9px;
 
   border: 1px solid rgba(13, 110, 253, 0.25);
@@ -959,6 +1186,7 @@ nav.scrolled {
   color: var(--text-secondary);
 
   font-size: 0.88rem;
+
   line-height: 1.7;
 }
 
@@ -1000,6 +1228,7 @@ nav.scrolled {
 
 .project-link {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -1049,12 +1278,83 @@ nav.scrolled {
 }
 
 
+/* ---------- Featured Project ---------- */
+
+.featured-card {
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns: 1.15fr 1fr;
+
+  align-items: stretch;
+}
+
+.featured-card .project-image {
+  height: 100%;
+
+  min-height: 420px;
+}
+
+.featured-card .project-card-content {
+  justify-content: center;
+
+  padding: 42px;
+}
+
+.featured-card .project-category {
+  margin-bottom: 15px;
+}
+
+.featured-card h3 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+
+  letter-spacing: -0.035em;
+}
+
+.featured-card p {
+  max-width: 500px;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+.featured-card .tech-stack {
+  margin-top: 8px;
+}
+
+.project-list .project-card {
+  min-height: 500px;
+}
+
+.featured-card .project-image::after {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 50%,
+      rgba(3, 7, 18, 0.2)
+    );
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(13, 110, 253, 0.55);
+
+  box-shadow:
+    0 20px 60px rgba(13, 110, 253, 0.18);
+}
+
+
 /* =========================================================
    CONTACT
    ========================================================= */
 
-#contact {
+#contact,
+.contact-section {
   padding-top: 120px;
+
   padding-bottom: 120px;
 
   text-align: center;
@@ -1067,82 +1367,191 @@ nav.scrolled {
     );
 }
 
+.contact-wrapper {
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+.contact-section .section-label {
+  text-align: center;
+}
+
+.contact-heading,
 #contact h2 {
-  max-width: 750px;
+  max-width: 850px;
 
-  margin: 0 auto 18px;
+  margin: 0 auto 20px;
 
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.3rem, 5vw, 4rem);
+
   font-weight: 800;
 
-  line-height: 1.1;
+  line-height: 1.08;
 
   letter-spacing: -0.05em;
 }
 
+.contact-heading span,
 #contact h2 span {
   color: var(--blue);
 }
 
+.contact-description,
 #contact > p {
-  max-width: 600px;
+  max-width: 650px;
 
   margin: 0 auto 45px;
 
   color: var(--text-secondary);
 
+  font-size: 0.95rem;
+
   line-height: 1.8;
+
+  text-align: center;
 }
 
-.contact-links {
+.contact-cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  text-align: left;
+}
+
+.contact-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  color: inherit;
+
+  background: var(--bg-card);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--border-blue);
+
+  background: var(--bg-card-hover);
+
+  box-shadow: var(--shadow-blue);
+}
+
+.contact-card-icon {
+  width: 42px;
+  height: 42px;
+
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  gap: 16px;
+  margin-bottom: 22px;
 
-  flex-wrap: wrap;
+  flex-shrink: 0;
+
+  border: 1px solid rgba(13, 110, 253, 0.25);
+  border-radius: 10px;
+
+  color: var(--blue);
+
+  background: rgba(13, 110, 253, 0.08);
+
+  font-size: 1rem;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.contact-card:hover .contact-card-icon {
+  border-color: rgba(13, 110, 253, 0.5);
 
-  width: 58px;
-  height: 58px;
+  background: rgba(13, 110, 253, 0.15);
 
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  transform: scale(1.05);
+}
+
+.contact-card-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding-right: 20px;
+}
+
+.contact-card-label {
+  color: var(--text-primary);
+
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.contact-card-value {
+  min-width: 0;
 
   color: var(--text-secondary);
 
-  background: var(--bg-card);
+  font-family: "Fira Code", monospace;
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  font-size: 0.7rem;
 
-  font-size: 1.35rem;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.contact-arrow {
+  position: absolute;
+
+  right: 22px;
+  bottom: 22px;
+
+  color: var(--text-muted);
+
+  font-size: 0.8rem;
 
   transition:
     color var(--transition),
-    border-color var(--transition),
-    background var(--transition),
-    transform var(--transition),
-    box-shadow var(--transition);
+    transform var(--transition);
 }
 
-.contact-links a:hover {
-  color: white;
+.contact-card:hover .contact-arrow {
+  color: var(--blue);
 
-  border-color: var(--blue);
-
-  background: rgba(13, 110, 253, 0.12);
-
-  transform: translateY(-4px);
-
-  box-shadow: var(--shadow-blue);
+  transform: translateX(4px);
 }
 
 
@@ -1151,17 +1560,17 @@ nav.scrolled {
    ========================================================= */
 
 footer {
-  padding: 30px 8%;
+  position: relative;
 
-  border-top: 1px solid var(--border);
+  padding: 28px 8%;
 
-  background: rgba(3, 7, 18, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: rgba(3, 7, 18, 0.82);
 
   color: var(--text-muted);
 
-  font-size: 0.8rem;
-
-  text-align: center;
+  font-size: 0.78rem;
 }
 
 footer a {
@@ -1175,7 +1584,9 @@ footer a:hover {
 }
 
 .footer-content {
+  width: 100%;
   max-width: 1200px;
+
   margin: 0 auto;
 
   display: flex;
@@ -1183,17 +1594,66 @@ footer a:hover {
   align-items: center;
   justify-content: space-between;
 
-  gap: 20px;
+  gap: 25px;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-built {
+  color: var(--text-muted);
+}
+
+.footer-built span {
+  color: var(--blue);
+
+  font-family: "Fira Code", monospace;
+
+  font-weight: 600;
 }
 
 .footer-socials {
   display: flex;
+
   align-items: center;
-  gap: 14px;
+
+  gap: 12px;
 }
 
 .footer-socials a {
-  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+
+  color: var(--text-muted);
+
+  background: rgba(15, 23, 42, 0.4);
+
+  font-size: 0.85rem;
+
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background var(--transition),
+    transform var(--transition);
+}
+
+.footer-socials a:hover {
+  color: white;
+
+  border-color: var(--border-blue);
+
+  background: rgba(13, 110, 253, 0.1);
+
+  transform: translateY(-3px);
 }
 
 
@@ -1213,6 +1673,7 @@ footer a:hover {
   z-index: 900;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -1289,6 +1750,7 @@ footer a:hover {
    ========================================================= */
 
 @media (max-width: 992px) {
+
   section {
     padding: 90px 6%;
   }
@@ -1305,9 +1767,11 @@ footer a:hover {
     gap: 45px;
   }
 
-  .projects-grid {
+  .projects-grid,
+  .project-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
 
 
@@ -1316,13 +1780,20 @@ footer a:hover {
    ========================================================= */
 
 @media (max-width: 768px) {
+
   :root {
     --navbar-height: 70px;
   }
 
+
+  /* ---------- General ---------- */
+
   section {
     padding: 80px 5%;
   }
+
+
+  /* ---------- Navbar ---------- */
 
   nav {
     padding: 0 5%;
@@ -1345,6 +1816,7 @@ footer a:hover {
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     padding: 18px 5% 25px;
@@ -1394,6 +1866,9 @@ footer a:hover {
     text-align: center;
   }
 
+
+  /* ---------- Hero ---------- */
+
   #home {
     min-height: 90vh;
 
@@ -1408,63 +1883,151 @@ footer a:hover {
     font-size: 0.82rem;
   }
 
+
+  /* ---------- About ---------- */
+
   .about-section {
     grid-template-columns: 1fr;
 
     gap: 50px;
   }
 
-  .skills-grid,
-  .projects-grid {
+
+  /* ---------- Skills ---------- */
+
+  .skills-grid {
     grid-template-columns: 1fr;
   }
 
-  .project-card {
-    min-height: auto;
+  .skills-heading {
+    margin-bottom: 35px;
   }
+
+  .skill-box {
+    padding: 22px;
+  }
+
+  .skill-category-header {
+    margin-bottom: 20px;
+  }
+
+
+  /* ---------- Projects ---------- */
+
+  .projects-grid,
+  .project-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .project-card {
+    min-height: 0;
+  }
+
+  .project-list .project-card {
+    min-height: 0;
+  }
+
+  .project-list .project-image {
+    height: 220px;
+  }
+
+  .project-list .project-card-content {
+    padding: 24px;
+  }
+
+  .project-list .project-card p {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+
+  /* ---------- Featured Project ---------- */
+
+  .featured-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 0;
+  }
+
+  .featured-card .project-image {
+    width: 100%;
+
+    height: 260px;
+
+    min-height: 260px;
+  }
+
+  .featured-card .project-card-content {
+    padding: 25px;
+  }
+
+  .featured-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .featured-card p {
+    font-size: 0.9rem;
+  }
+
+
+  /* ---------- Contact ---------- */
+
+  .contact-cards {
+    grid-template-columns: 1fr !important;
+
+    gap: 14px;
+  }
+
+  .contact-card {
+    width: 100%;
+
+    min-height: 120px;
+
+    display: grid;
+
+    grid-template-columns: 48px minmax(0, 1fr) 20px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+  }
+
+  .contact-card-icon {
+    width: 48px;
+    height: 48px;
+
+    margin: 0;
+  }
+
+  .contact-card-content {
+    min-width: 0;
+
+    padding-right: 0;
+  }
+
+  .contact-card-value {
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+  }
+
+  .contact-arrow {
+    position: static;
+
+    justify-self: end;
+  }
+
+
+  /* ---------- Footer ---------- */
 
   .footer-content {
-    flex-direction: column;
-  }
-
-  .skills-heading {
-  margin-bottom: 35px;
-}
-
-.skill-box {
-  padding: 22px;
-}
-
-.skill-category-header {
-  margin-bottom: 20px;
-}
-
-.featured-card {
-  grid-template-columns: 1fr;
-}
-
-.featured-card .project-image {
-  height: 260px;
-  min-height: 260px;
-}
-
-.featured-card .project-card-content {
-  padding: 25px;
-}
-
-.project-list {
-  grid-template-columns: 1fr;
-}
-
-.contact-cards {
-  grid-template-columns: 1fr;
-}
-
-.contact-card {
-  min-height: 125px;
-}
-
-.footer-content {
     flex-direction: column;
 
     justify-content: center;
@@ -1473,6 +2036,7 @@ footer a:hover {
 
     gap: 15px;
   }
+
 }
 
 
@@ -1481,9 +2045,15 @@ footer a:hover {
    ========================================================= */
 
 @media (max-width: 480px) {
+
+  /* ---------- General ---------- */
+
   section {
     padding: 70px 4%;
   }
+
+
+  /* ---------- Navbar ---------- */
 
   nav {
     padding: 0 4%;
@@ -1492,6 +2062,9 @@ footer a:hover {
   .logo {
     font-size: 1.15rem;
   }
+
+
+  /* ---------- Hero ---------- */
 
   #home {
     padding-left: 5%;
@@ -1515,21 +2088,44 @@ footer a:hover {
     width: 100%;
   }
 
+
+  /* ---------- About ---------- */
+
   .about-left h2,
   .about-right h2 {
     font-size: 2rem;
   }
 
+
+  /* ---------- Skills ---------- */
+
   .skill-box {
-    padding: 22px;
+    padding: 20px;
   }
+
+
+  /* ---------- Projects ---------- */
 
   .project-card-content {
     padding: 20px;
   }
 
-  .project-image {
+  .project-list .project-image {
     height: 190px;
+  }
+
+  .featured-card .project-image {
+    height: 210px;
+
+    min-height: 210px;
+  }
+
+  .featured-card .project-card-content {
+    padding: 20px;
+  }
+
+  .featured-card h3 {
+    font-size: 1.55rem;
   }
 
   .project-links {
@@ -1542,664 +2138,47 @@ footer a:hover {
     width: 100%;
   }
 
-  .contact-links {
-    gap: 10px;
+
+  /* ---------- Contact ---------- */
+
+  .contact-heading {
+    font-size: 2.2rem !important;
   }
+
+  .contact-card {
+    grid-template-columns: 44px minmax(0, 1fr) 18px;
+
+    gap: 12px;
+
+    padding: 18px;
+  }
+
+  .contact-card-icon {
+    width: 44px;
+    height: 44px;
+
+    margin: 0;
+  }
+
+  .contact-card-label {
+    font-size: 0.9rem;
+  }
+
+  .contact-card-value {
+    font-size: 0.68rem;
+
+    line-height: 1.5;
+  }
+
+
+  /* ---------- Back To Top ---------- */
 
   .top-button {
-    right: 18px;
-    bottom: 18px;
+    width: 42px;
+    height: 42px;
+
+    right: 16px;
+    bottom: 16px;
   }
 
-  .featured-card .project-image {
-  height: 210px;
-  min-height: 210px;
-}
-
-.featured-card .project-card-content {
-  padding: 20px;
-}
-
-.featured-card h3 {
-  font-size: 1.5rem;
-}
-
-.contact-heading {
-  font-size: 2.2rem !important;
-}
-
-.contact-card {
-  padding: 20px;
-}
-
-.contact-card-icon {
-  margin-bottom: 16px;
-}
-}
-
-/* =========================================================
-   ABOUT — REDESIGNED DETAILS
-   ========================================================= */
-
-.section-label {
-  margin-bottom: 12px;
-
-  color: var(--blue);
-
-  font-family: "Fira Code", monospace;
-
-  font-size: 0.72rem;
-  font-weight: 600;
-
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.about-line {
-  width: 70px;
-  height: 2px;
-
-  margin-bottom: 28px;
-
-  background: var(--blue);
-
-  box-shadow:
-    0 0 15px rgba(13, 110, 253, 0.45);
-}
-
-.interest-list {
-  display: flex;
-  flex-direction: column;
-
-  gap: 14px;
-}
-
-.interest-card {
-  min-height: 92px;
-}
-
-.interest-icon {
-  width: 46px;
-  height: 46px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(13, 110, 253, 0.2);
-  border-radius: 10px;
-
-  color: var(--blue);
-
-  background: rgba(13, 110, 253, 0.08);
-
-  font-size: 1.1rem;
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
-}
-
-.interest-card:hover .interest-icon {
-  border-color: rgba(13, 110, 253, 0.5);
-
-  background: rgba(13, 110, 253, 0.15);
-
-  transform: scale(1.05);
-}
-
-.interest-card h3 {
-  color: var(--text-primary);
-
-  font-size: 0.98rem;
-}
-
-.interest-card p {
-  margin: 0;
-
-  color: var(--text-secondary);
-
-  font-size: 0.78rem;
-
-  line-height: 1.6;
-}
-
-/* =========================================================
-   SKILLS — REDESIGNED CATEGORIES
-   ========================================================= */
-
-.skills-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.skills-heading {
-  max-width: 700px;
-  margin-bottom: 45px;
-}
-
-.skills-title {
-  margin-bottom: 18px;
-
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 800;
-
-  line-height: 1.1;
-
-  letter-spacing: -0.04em;
-}
-
-.skills-title span {
-  color: var(--blue);
-}
-
-.skills-description {
-  max-width: 620px;
-
-  color: var(--text-secondary);
-
-  font-size: 0.95rem;
-
-  line-height: 1.8;
-}
-
-.skill-category-header {
-  display: flex;
-  align-items: center;
-
-  gap: 14px;
-
-  margin-bottom: 24px;
-}
-
-.skill-category-icon {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(13, 110, 253, 0.25);
-  border-radius: 10px;
-
-  color: var(--blue);
-
-  background: rgba(13, 110, 253, 0.08);
-
-  font-size: 1.15rem;
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
-}
-
-.skill-box:hover .skill-category-icon {
-  border-color: rgba(13, 110, 253, 0.5);
-
-  background: rgba(13, 110, 253, 0.15);
-
-  transform: translateY(-2px);
-}
-
-.skill-category-header h3 {
-  margin: 0;
-
-  color: var(--text-primary);
-
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.skill-tags {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 10px;
-
-  margin: 0;
-}
-
-.skill-tag {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 8px 11px;
-
-  border: 1px solid rgba(148, 163, 184, 0.13);
-  border-radius: 7px;
-
-  color: #cbd5e1;
-
-  background: rgba(15, 23, 42, 0.7);
-
-  font-family: "Fira Code", monospace;
-
-  font-size: 0.72rem;
-
-  transition:
-    color var(--transition),
-    border-color var(--transition),
-    background var(--transition),
-    transform var(--transition);
-}
-
-.skill-tag:hover {
-  color: white;
-
-  border-color: rgba(13, 110, 253, 0.45);
-
-  background: rgba(13, 110, 253, 0.1);
-
-  transform: translateY(-2px);
-}
-
-.skill-tag-icon {
-  display: inline-flex;
-
-  color: var(--blue);
-
-  font-size: 0.9rem;
-}
-
-
-/* Hide old progress bars if any old markup remains */
-.skill-info,
-.skill-bar {
-  display: none;
-}
-
-/* =========================================================
-   PROJECTS — REDESIGNED
-   ========================================================= */
-
-.projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.projects-heading {
-  max-width: 700px;
-  margin-bottom: 45px;
-}
-
-.projects-title {
-  margin-bottom: 18px;
-
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
-  font-weight: 800;
-
-  line-height: 1.1;
-
-  letter-spacing: -0.04em;
-}
-
-.projects-title span {
-  color: var(--blue);
-}
-
-.projects-description {
-  max-width: 650px;
-
-  color: var(--text-secondary);
-
-  font-size: 0.95rem;
-
-  line-height: 1.8;
-}
-
-
-/* ---------- Featured Project ---------- */
-
-.featured-project {
-  width: 100%;
-
-  margin-bottom: 24px;
-}
-
-.featured-card {
-  min-height: 0;
-
-  display: grid;
-
-  grid-template-columns: 1.15fr 1fr;
-
-  align-items: stretch;
-}
-
-.featured-card .project-image {
-  height: 100%;
-  min-height: 420px;
-}
-
-.featured-card .project-card-content {
-  justify-content: center;
-
-  padding: 42px;
-}
-
-.featured-card .project-category {
-  margin-bottom: 15px;
-}
-
-.featured-card h3 {
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
-
-  letter-spacing: -0.035em;
-}
-
-.featured-card p {
-  max-width: 500px;
-
-  font-size: 0.95rem;
-
-  line-height: 1.8;
-}
-
-.featured-card .tech-stack {
-  margin-top: 8px;
-}
-
-
-/* ---------- Normal Project Grid ---------- */
-
-.project-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.project-list .project-card {
-  min-height: 500px;
-}
-
-
-/* ---------- Project Image Overlay ---------- */
-
-.featured-card .project-image::after {
-  background:
-    linear-gradient(
-      90deg,
-      transparent 50%,
-      rgba(3, 7, 18, 0.2)
-    );
-}
-
-
-/* ---------- Project Hover ---------- */
-
-.featured-card:hover {
-  transform: translateY(-5px);
-
-  border-color: rgba(13, 110, 253, 0.55);
-
-  box-shadow:
-    0 20px 60px rgba(13, 110, 253, 0.18);
-}
-
-/* =========================================================
-   CONTACT — REDESIGNED
-   ========================================================= */
-
-.contact-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.contact-section .section-label {
-  text-align: center;
-}
-
-.contact-heading {
-  max-width: 850px !important;
-
-  margin: 0 auto 20px !important;
-
-  font-size: clamp(2.3rem, 5vw, 4rem) !important;
-
-  line-height: 1.08;
-
-  letter-spacing: -0.05em;
-}
-
-.contact-heading span {
-  color: var(--blue);
-}
-
-.contact-description {
-  max-width: 650px;
-
-  margin: 0 auto 45px !important;
-
-  color: var(--text-secondary);
-
-  font-size: 0.95rem;
-
-  line-height: 1.8;
-
-  text-align: center;
-}
-
-.contact-cards {
-  display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 16px;
-}
-
-.contact-card {
-  position: relative;
-
-  min-height: 150px;
-
-  display: flex;
-  flex-direction: column;
-
-  padding: 24px;
-
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-
-  background: var(--bg-card);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  box-shadow: var(--shadow-card);
-
-  overflow: hidden;
-
-  transition:
-    transform var(--transition),
-    border-color var(--transition),
-    background var(--transition),
-    box-shadow var(--transition);
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-
-  border-color: var(--border-blue);
-
-  background: var(--bg-card-hover);
-
-  box-shadow: var(--shadow-blue);
-}
-
-.contact-card-icon {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 22px;
-
-  border: 1px solid rgba(13, 110, 253, 0.25);
-  border-radius: 10px;
-
-  color: var(--blue);
-
-  background: rgba(13, 110, 253, 0.08);
-
-  font-size: 1rem;
-
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    transform var(--transition);
-}
-
-.contact-card:hover .contact-card-icon {
-  border-color: rgba(13, 110, 253, 0.5);
-
-  background: rgba(13, 110, 253, 0.15);
-
-  transform: scale(1.05);
-}
-
-.contact-card-content {
-  display: flex;
-  flex-direction: column;
-
-  gap: 6px;
-
-  padding-right: 20px;
-}
-
-.contact-card-label {
-  color: var(--text-primary);
-
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.contact-card-value {
-  color: var(--text-secondary);
-
-  font-family: "Fira Code", monospace;
-
-  font-size: 0.7rem;
-
-  line-height: 1.5;
-
-  word-break: break-word;
-}
-
-.contact-arrow {
-  position: absolute;
-
-  right: 22px;
-  bottom: 22px;
-
-  color: var(--text-muted);
-
-  font-size: 0.8rem;
-
-  transition:
-    color var(--transition),
-    transform var(--transition);
-}
-
-.contact-card:hover .contact-arrow {
-  color: var(--blue);
-
-  transform: translateX(4px);
-}
-
-/* =========================================================
-   FOOTER — REDESIGNED
-   ========================================================= */
-
-footer {
-  position: relative;
-
-  padding: 28px 8%;
-
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-  background: rgba(3, 7, 18, 0.82);
-
-  color: var(--text-muted);
-
-  font-size: 0.78rem;
-}
-
-.footer-content {
-  width: 100%;
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 25px;
-}
-
-.footer-content p {
-  margin: 0;
-}
-
-.footer-built {
-  color: var(--text-muted);
-}
-
-.footer-built span {
-  color: var(--blue);
-
-  font-family: "Fira Code", monospace;
-
-  font-weight: 600;
-}
-
-.footer-socials {
-  display: flex;
-
-  align-items: center;
-
-  gap: 12px;
-}
-
-.footer-socials a {
-  width: 34px;
-  height: 34px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-
-  color: var(--text-muted);
-
-  background: rgba(15, 23, 42, 0.4);
-
-  font-size: 0.85rem;
-
-  transition:
-    color var(--transition),
-    border-color var(--transition),
-    background var(--transition),
-    transform var(--transition);
-}
-
-.footer-socials a:hover {
-  color: white;
-
-  border-color: var(--border-blue);
-
-  background: rgba(13, 110, 253, 0.1);
-
-  transform: translateY(-3px);
 }
