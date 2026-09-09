@@ -10,52 +10,38 @@ import BackToTop from './components/BackToTop';
 import { useEffect } from 'react';
 
 function App() {
-
   useEffect(() => {
+    const reveals = document.querySelectorAll('.reveal');
 
-    const reveals =
-      document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
 
-    const revealOnScroll = () => {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
 
-      reveals.forEach((section) => {
-
-        const windowHeight =
-          window.innerHeight;
-
-        const revealTop =
-          section.getBoundingClientRect().top;
-
-        const revealPoint = 100;
-
-        if (
-          revealTop < windowHeight - revealPoint
-        ) {
-          section.classList.add('active');
-        }
-
-      });
-
-    };
-
-    window.addEventListener(
-      'scroll',
-      revealOnScroll
+            // Animate only once
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -60px 0px',
+      }
     );
 
-    revealOnScroll();
+    reveals.forEach((element) => {
+      revealObserver.observe(element);
+    });
 
     return () => {
-      window.removeEventListener(
-        'scroll',
-        revealOnScroll
-      );
+      revealObserver.disconnect();
     };
-
   }, []);
 
   return (
-
     <>
       <Navbar />
 
@@ -73,9 +59,7 @@ function App() {
 
       <BackToTop />
     </>
-
   );
-
 }
 
 export default App;
